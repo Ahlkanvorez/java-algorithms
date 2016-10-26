@@ -9,6 +9,13 @@ import java.util.List;
  * @author robertmitchell
  */
 public class Utilities {
+    /**
+     * 
+     * @param s
+     * @param T
+     * @param N
+     * @param R 
+     */
     public static void testSort(final Sort s, final int T, final int N, final int R) {
         final List<Double> times = new LinkedList<>();
         for (int t = 0; t < T; ++t) {
@@ -33,6 +40,10 @@ public class Utilities {
                 times.stream().reduce((a, b) -> a + b).get() / times.size());
     }
     
+    /**
+     * 
+     * @param s 
+     */
     public static void testSort(final Sort s) {
         // T = trials, N = length of array, R = range of values.
         final int T = 50;
@@ -41,6 +52,12 @@ public class Utilities {
         testSort(s, T, N, R);
     }
     
+    /**
+     * 
+     * @param s
+     * @param min
+     * @param max 
+     */
     public static void doublingTest(final Sort s, final int min, final int max) {
         final int T = 20;
         final int R = 20;
@@ -49,6 +66,12 @@ public class Utilities {
         }
     }
     
+    /**
+     * 
+     * @param data
+     * @param i
+     * @param j 
+     */
     public static void swap(final Object[] data, final int i, final int j) {
         if (data != null &&
             i >= 0 && i < data.length &&
@@ -59,6 +82,11 @@ public class Utilities {
         }
     }
     
+    /**
+     * 
+     * @param data
+     * @return 
+     */
     public static boolean isSorted(final Comparable[] data) {
         if (data == null || data.length == 1) {
             return false;
@@ -71,6 +99,10 @@ public class Utilities {
         return true;
     }
 
+    /**
+     * 
+     * @param data 
+     */
     public static void shuffle(Object[] data) {
         for (int i = data.length - 1; i > 0; --i) {
             swap(data, i, (int) (Math.random() * i));

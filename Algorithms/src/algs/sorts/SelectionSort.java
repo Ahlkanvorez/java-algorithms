@@ -8,6 +8,12 @@ import static algs.sorts.Utilities.swap;
  */
 public class SelectionSort implements Sort {
 
+    /**
+     * 
+     * @param data
+     * @param low
+     * @param high 
+     */
     @Override
     public void sort(Comparable[] data, int low, int high) {
         /* Loop through all of the data; all items in data before i are sorted,

@@ -10,6 +10,14 @@ public class MergeSort implements Sort {
     private static final int SORT_THRESHOLD = 11;
     private static final Sort INSERTION_SORT = new InsertionSort();
     
+    /**
+     * 
+     * @param data
+     * @param aux
+     * @param low
+     * @param mid
+     * @param high 
+     */
     private void merge(final Comparable[] data, final Comparable[] aux,
             final int low, final int mid, final int high) {
         // This library is faster than a manual copy via a for-loop.
@@ -29,6 +37,13 @@ public class MergeSort implements Sort {
         }
     }
 
+    /**
+     * 
+     * @param data
+     * @param aux
+     * @param low
+     * @param high 
+     */
     private void sort(final Comparable[] data, final Comparable[] aux,
             final int low, final int high) {
         /* SORT_THRESHOLD = 11.
@@ -45,12 +60,22 @@ public class MergeSort implements Sort {
         merge(data, aux, low, mid, high);
     }
     
+    /**
+     * 
+     * @param data
+     * @param low
+     * @param high 
+     */
     @Override
     public void sort(Comparable[] data, int low, int high) {
         Comparable[] aux = Arrays.copyOf(data, high + 1);
         sort(data, aux, low, high);
     }
 
+    /**
+     * 
+     * @param data 
+     */
     @Override
     public void sort(final Comparable[] data) {
         sort(data, 0, data.length - 1);
