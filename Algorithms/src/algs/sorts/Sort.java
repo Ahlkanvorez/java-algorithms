@@ -2,14 +2,17 @@ package algs.sorts;
 
 /**
  *
+ *
+ *
  * @author robertmitchell
  */
-public interface Sort {
+public interface Sort<T extends Comparable<T>> {
+
     /**
      * 
      * @param data 
      */
-    public void sort(final Comparable[] data);
+    void sort(final T[] data);
 
     /**
      * 
@@ -17,5 +20,5 @@ public interface Sort {
      * @param low
      * @param high 
      */
-    public void sort(final Comparable[] data, final int low, final int high);
+    void sort(final T[] data, final int low, final int high);
 }

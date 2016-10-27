@@ -6,10 +6,14 @@ import java.util.Arrays;
  *
  * @author robertmitchell
  */
-public class MergeSort implements Sort {
+public class MergeSort<T extends Comparable<T>> implements Sort<T> {
     private static final int SORT_THRESHOLD = 11;
-    private static final Sort INSERTION_SORT = new InsertionSort();
-    
+    private final Sort<T> INSERTION_SORT;
+
+    public MergeSort() {
+        this.INSERTION_SORT = new InsertionSort<>();
+    }
+
     /**
      * 
      * @param data
@@ -18,12 +22,12 @@ public class MergeSort implements Sort {
      * @param mid
      * @param high 
      */
-    private void merge(final Comparable[] data, final Comparable[] aux,
+    private void merge(final T[] data, final T[] aux,
             final int low, final int mid, final int high) {
         // This library is faster than a manual copy via a for-loop.
         System.arraycopy(data, low, aux, low, high - low + 1);
 
-         /* Combine the two subarrays in sorted order */
+         /* Combine the two sub-arrays in sorted order */
         for (int i = low, j = mid + 1, k = low; k <= high; ++k) {
             if (i > mid) {
                 data[k] = aux[j++];
@@ -44,7 +48,7 @@ public class MergeSort implements Sort {
      * @param low
      * @param high 
      */
-    private void sort(final Comparable[] data, final Comparable[] aux,
+    private void sort(final T[] data, final T[] aux,
             final int low, final int high) {
         /* SORT_THRESHOLD = 11.
           If the segment is below the threshold in length, sort using insertion sort. */
@@ -67,8 +71,8 @@ public class MergeSort implements Sort {
      * @param high 
      */
     @Override
-    public void sort(Comparable[] data, int low, int high) {
-        Comparable[] aux = Arrays.copyOf(data, high + 1);
+    public void sort(T[] data, int low, int high) {
+        T[] aux = Arrays.copyOf(data, high + 1);
         sort(data, aux, low, high);
     }
 
@@ -77,12 +81,12 @@ public class MergeSort implements Sort {
      * @param data 
      */
     @Override
-    public void sort(final Comparable[] data) {
+    public void sort(final T[] data) {
         sort(data, 0, data.length - 1);
     }
 
     public static void main(final String[] args) {
         System.out.println("Testing Merge Sort:");
-        Utilities.doublingTest(new MergeSort(), (int) Math.pow(2, 13), (int) Math.pow(2, 25));
+        Utilities.doublingTest(new MergeSort<Integer>(), (int) Math.pow(2, 13), (int) Math.pow(2, 25));
     }
 }

@@ -6,7 +6,7 @@ import static algs.sorts.Utilities.swap;
  *
  * @author robertmitchell
  */
-public class SelectionSort implements Sort {
+public class SelectionSort<T extends Comparable<T>> implements Sort<T> {
 
     /**
      * 
@@ -15,7 +15,7 @@ public class SelectionSort implements Sort {
      * @param high 
      */
     @Override
-    public void sort(Comparable[] data, int low, int high) {
+    public void sort(T[] data, int low, int high) {
         /* Loop through all of the data; all items in data before i are sorted,
             and after i are unsorted. */
         for (int i = low; i < high; ++i) {
@@ -36,13 +36,13 @@ public class SelectionSort implements Sort {
      * @param data The array to sort.
      */
     @Override
-    public void sort(final Comparable[] data) {
+    public void sort(final T[] data) {
         sort(data, 0, data.length);
     }
     
     public static void main(final String[] args) {
         System.out.println("Testing Selection Sort:");
-        Utilities.doublingTest(new SelectionSort(),
+        Utilities.doublingTest(new SelectionSort<Integer>(),
                 (int) Math.pow(2, 13),
                 (int) Math.pow(2, 18));
     }

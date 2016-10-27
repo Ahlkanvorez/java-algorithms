@@ -16,7 +16,7 @@ public class Utilities {
      * @param N
      * @param R 
      */
-    public static void testSort(final Sort s, final int T, final int N, final int R) {
+    public static void testSort(final Sort<Integer> s, final int T, final int N, final int R) {
         final List<Double> times = new LinkedList<>();
         for (int t = 0; t < T; ++t) {
             final Integer[] data = new Integer[N];
@@ -44,7 +44,7 @@ public class Utilities {
      * 
      * @param s 
      */
-    public static void testSort(final Sort s) {
+    public static void testSort(final Sort<Integer> s) {
         // T = trials, N = length of array, R = range of values.
         final int T = 50;
         final int N = 10000;
@@ -58,7 +58,7 @@ public class Utilities {
      * @param min
      * @param max 
      */
-    public static void doublingTest(final Sort s, final int min, final int max) {
+    public static void doublingTest(final Sort<Integer> s, final int min, final int max) {
         final int T = 20;
         final int R = 20;
         for (int N = min; N < max; N *= 2) {
@@ -87,7 +87,7 @@ public class Utilities {
      * @param data
      * @return 
      */
-    public static boolean isSorted(final Comparable[] data) {
+    public static <T extends Comparable<T>> boolean isSorted(final T[] data) {
         if (data == null || data.length == 1) {
             return false;
         }

@@ -6,12 +6,15 @@ import static algs.sorts.Utilities.swap;
 import static java.lang.Math.pow;
 
 /**
- *
  * @author robertmitchell
  */
-public class QuickSort implements Sort {
+public class QuickSort<T extends Comparable<T>> implements Sort<T> {
     private static final int SORT_CUTOFF = 11;
-    private static final InsertionSort INSERTION_SORT = new InsertionSort();
+    private final Sort<T> INSERTION_SORT;
+
+    public QuickSort() {
+        this.INSERTION_SORT = new InsertionSort<>();
+    }
 
     /**
      * 
@@ -21,8 +24,8 @@ public class QuickSort implements Sort {
      * @return 
      */
     @SuppressWarnings("empty-statement")
-    private int partition(final Comparable[] data, final int low, final int high) {
-        final Comparable pivot = data[low]; // Make the first index the pivot value
+    private int partition(final T[] data, final int low, final int high) {
+        final T pivot = data[low]; // Make the first index the pivot value
         int i = low - 1;  // Set the left scan-index
         int j = high + 1; // Set the right scan-index
         while (true) {
@@ -48,7 +51,7 @@ public class QuickSort implements Sort {
      * @param low
      * @param high 
      */
-    private void quickSort(final Comparable[] data, final int low, final int high) {
+    private void quickSort(final T[] data, final int low, final int high) {
         /* If the segment size is less than the cutoff (here 11), sort the
             subarray with Insertion Sort, which performs better on arrays of
             that size. */
@@ -69,7 +72,7 @@ public class QuickSort implements Sort {
      * @param data 
      */
     @Override
-    public void sort(final Comparable[] data) {
+    public void sort(final T[] data) {
         shuffle(data); // Reduces probability of worst-case performance.
         quickSort(data, 0, data.length - 1);
     }
@@ -81,12 +84,12 @@ public class QuickSort implements Sort {
      * @param high 
      */
     @Override
-    public void sort(final Comparable[] data, final int low, final int high) {
+    public void sort(final T[] data, final int low, final int high) {
         quickSort(data, low, high);
     }
     
     public static void main (final String[] args) {
         System.out.println("Testing Quick Sort:");
-        Utilities.doublingTest(new QuickSort(), (int) pow(2, 13), (int) pow(2, 25));
+        Utilities.doublingTest(new QuickSort<Integer>(), (int) pow(2, 13), (int) pow(2, 25));
     }
 }
