@@ -6,7 +6,20 @@ import static algs.sorts.Utilities.swap;
 import static java.lang.Math.pow;
 
 /**
- * @author robertmitchell
+ * Implements the Quick Sort algorithm for an array of type T, where T implements the method .compareTo(T)
+ *
+ * Theoretically, the Quick Sort algorithm is an in-place algorithm.
+ *
+ * The Quick Sort algorithm has the following performance characteristics, as have been validated for this
+ * implementation by empirical tests:
+ *
+ * - Worst case number of comparisons: O(N^2)
+ * - Average case number of comparisons: O(N lg N)
+ * - Best case number of comparisons: O(N lg N)
+ *
+ * - Guaranteed extra space usage: O(lg N) for the call-stack made by the recursive tree.
+ *
+ * @author Robert Mitchell <robert.mitchell36@gmail.com>
  */
 public class QuickSort<T extends Comparable<T>> implements Sort<T> {
     private static final int SORT_CUTOFF = 11;
@@ -17,17 +30,21 @@ public class QuickSort<T extends Comparable<T>> implements Sort<T> {
     }
 
     /**
-     * 
-     * @param data
-     * @param low
-     * @param high
-     * @return 
+     * Partitions the specified segment [low, high] of data such that there exists an element pivot at data[p] so that
+     *   for every low <= k, j <= high  data[k < p] <= data[p] = pivot <= data[j > p]
+     *
+     * @param data the data from which to partition the specified segment.
+     * @param low the first index to consider in partitioning this segment; the element at this index will become the
+     *            pivot element.
+     * @param high the last index to consider in partitioning this segment.
+     * @return the index of the pivot, from which every element to the left is less than or equal to it, and every
+     *          element to the right is greater than or equal to it.
      */
     @SuppressWarnings("empty-statement")
     private int partition(final T[] data, final int low, final int high) {
-        final T pivot = data[low]; // Make the first index the pivot value
-        int i = low - 1;  // Set the left scan-index
-        int j = high + 1; // Set the right scan-index
+        final T pivot = data[low]; /* Make the first index the pivot value */
+        int i = low - 1;  /* Set the left scan-index */
+        int j = high + 1; /* Set the right scan-index */
         while (true) {
             /* Find the highest index on the left whose element
                 is less than the pivot. */
@@ -44,16 +61,19 @@ public class QuickSort<T extends Comparable<T>> implements Sort<T> {
             swap(data, i, j);
         }
     }
-    
+
     /**
-     * 
-     * @param data
-     * @param low
-     * @param high 
+     * Sorts, using the Quick Sort algorithm, the given array, data, on the inclusive interval [low, high]. This
+     * implementation uses an Insertion Sort for sub-arrays of length 11 or less.
+     * Note, that this method assumes low < high.
+     *
+     * @param data The array to be sorted
+     * @param low The first index, inclusive, to be sorted
+     * @param high The last index, inclusive, to be sorted
      */
     private void quickSort(final T[] data, final int low, final int high) {
         /* If the segment size is less than the cutoff (here 11), sort the
-            subarray with Insertion Sort, which performs better on arrays of
+            sub-array with Insertion Sort, which performs better on arrays of
             that size. */
         if (high <= low + SORT_CUTOFF) {
             INSERTION_SORT.sort(data, low, high);
@@ -68,8 +88,11 @@ public class QuickSort<T extends Comparable<T>> implements Sort<T> {
     }
     
     /**
-     * 
-     * @param data 
+     * Sorts the entire array using the Quick Sort algorithm, after first shuffling the array in O(N) time to reduce
+     * the probability of worst-case O(N^2) performance. This implementation uses an Insertion Sort for sub-arrays of
+     * length 11 or less.
+     *
+     * @param data The array to be sorted.
      */
     @Override
     public void sort(final T[] data) {
@@ -78,10 +101,13 @@ public class QuickSort<T extends Comparable<T>> implements Sort<T> {
     }
 
     /**
-     * 
-     * @param data
-     * @param low
-     * @param high 
+     * Sorts, using the Quick Sort algorithm, the given array, data, on the inclusive interval [low, high].
+     * Note, that this method assumes low < high. This implementation uses an Insertion Sort for sub-arrays of length
+     * 11 or less.
+     *
+     * @param data The array to be sorted
+     * @param low The first index, inclusive, to be sorted
+     * @param high The last index, inclusive, to be sorted
      */
     @Override
     public void sort(final T[] data, final int low, final int high) {

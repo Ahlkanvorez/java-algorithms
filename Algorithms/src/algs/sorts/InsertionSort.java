@@ -1,12 +1,20 @@
 package algs.sorts;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
- * @param T
+ * Implements the Insertion Sort algorithm for an array of type T, where T implements the method .compareTo(T)
  *
- * @author robertmitchell
+ * Theoretically, the Insertion Sort algorithm is an on-line, in-place, stable algorithm.
+ *
+ * The Insertion Sort algorithm has the following performance characteristics, as have been validated for this
+ * implementation by empirical tests:
+ *
+ * - Worst case number of comparisons: O(N^2)
+ * - Average case number of comparisons: O(N^2)
+ * - Best case number of comparisons: O(N)
+ *
+ * - Guaranteed extra space usage: O(1).
+ *
+ * @author Robert Mitchell <robert.mitchell36@gmail.com>
  */
 public class InsertionSort<T extends Comparable<T>> implements Sort<T> {
     /* TODO: Cache instances of InsertionSort for some common types
@@ -26,11 +34,12 @@ public class InsertionSort<T extends Comparable<T>> implements Sort<T> {
     } */
 
     /**
-     * Implements the Insertion Sort algorithm for an array of Comparable objects
+     * Sorts, using the Insertion Sort algorithm, the given array, data, on the inclusive interval [low, high].
+     * Note, that this method assumes low < high.
      *
-     * @param data the data to sort
-     * @param low the index indicating the beginning of the segment to sort
-     * @param high the index indicating the end of the segment to sort
+     * @param data The array to be sorted
+     * @param low The first index, inclusive, to be sorted
+     * @param high The last index, inclusive, to be sorted
      */
     @Override
     public void sort(final T[] data, final int low, final int high) {
@@ -43,12 +52,13 @@ public class InsertionSort<T extends Comparable<T>> implements Sort<T> {
                 shift the predecessors right one index. */
             for (; j >= low && datum.compareTo(data[j]) < 0; --j) {
                 data[j + 1] = data[j];
-            } // Place the current element in it's proper position.
+            } /* Place the current element in it's proper position. */
             data[j + 1] = datum;
         }
     }
     
     /**
+     * Sorts the entire given array using the Insertion Sort algorithm.
      *
      * @param data The array to sort.
      */

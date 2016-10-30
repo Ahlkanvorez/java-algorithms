@@ -2,29 +2,46 @@ package algs.sorts;
 
 import java.util.Arrays;
 
+
 /**
+ * Implements the Merge Sort algorithm for an array of type T, where T implements the method .compareTo(T)
  *
- * @author robertmitchell
+ * Theoretically, the Merge Sort algorithm is a stable algorithm.
+ *
+ * The Merge Sort algorithm has the following performance characteristics, as have been validated for this
+ * implementation by empirical tests:
+ *
+ * - Worst case number of comparisons: O(N lg N)
+ * - Average case number of comparisons: O(N lg N)
+ * - Best case number of comparisons: O(N lg N)
+ *
+ * - Guaranteed extra space usage: O(N) for the auxiliary array.
+ *
+ * @author Robert Mitchell <robert.mitchell36@gmail.com>
  */
 public class MergeSort<T extends Comparable<T>> implements Sort<T> {
-    private static final int SORT_THRESHOLD = 11;
+    private static final int SORT_THRESHOLD = 11; /* A few brief trials found this to be a good threshold choice. */
     private final Sort<T> INSERTION_SORT;
 
+    /**
+     * Initializes the INSERTION_SORT used for sub-arrays of length 11 or less, for better performance.
+     */
     public MergeSort() {
         this.INSERTION_SORT = new InsertionSort<>();
     }
 
     /**
+     * Merges the two sorted segments [low, mid - 1], [mid, high] from the aux array into the data array.
      * 
-     * @param data
-     * @param aux
-     * @param low
-     * @param mid
-     * @param high 
+     * @param data The array in which the merge should be placed.
+     * @param aux The auxiliary array containing the sorted segments to merge.
+     * @param low The first index, inclusive, to be merged.
+     * @param mid The middle index to be merged, and the first index of the second sorted segment.
+     * @param high The last index, inclusive, to be merged.
      */
     private void merge(final T[] data, final T[] aux,
             final int low, final int mid, final int high) {
-        // This library is faster than a manual copy via a for-loop.
+        /* This library is faster than a manual copy via a for-loop. */
         System.arraycopy(data, low, aux, low, high - low + 1);
 
          /* Combine the two sub-arrays in sorted order */
@@ -42,11 +59,14 @@ public class MergeSort<T extends Comparable<T>> implements Sort<T> {
     }
 
     /**
-     * 
-     * @param data
-     * @param aux
-     * @param low
-     * @param high 
+     * Sorts, using the Merge Sort algorithm, the given array, data, on the inclusive interval [low, high]. This
+     * implementation uses an Insertion Sort for sub-arrays of length 11 or less.
+     * Note, that this method assumes low < high.
+     *
+     * @param data The array to be sorted.
+     * @param aux The auxiliary array to use for storing sorted segments prior to merges.
+     * @param low The first index, inclusive, to be sorted.
+     * @param high The last index, inclusive, to be sorted.
      */
     private void sort(final T[] data, final T[] aux,
             final int low, final int high) {
@@ -63,22 +83,27 @@ public class MergeSort<T extends Comparable<T>> implements Sort<T> {
         sort(data, aux, mid + 1, high);
         merge(data, aux, low, mid, high);
     }
-    
+
     /**
-     * 
-     * @param data
-     * @param low
-     * @param high 
+     * Sorts, using the Merge Sort algorithm, the given array, data, on the inclusive interval [low, high].
+     * Note, that this method assumes low < high. This implementation uses an Insertion Sort for sub-arrays of length
+     * 11 or less.
+     *
+     * @param data The array to be sorted
+     * @param low The first index, inclusive, to be sorted
+     * @param high The last index, inclusive, to be sorted
      */
     @Override
-    public void sort(T[] data, int low, int high) {
-        T[] aux = Arrays.copyOf(data, high + 1);
+    public void sort(final T[] data, final int low, final int high) {
+        final T[] aux = Arrays.copyOf(data, high + 1);
         sort(data, aux, low, high);
     }
 
     /**
-     * 
-     * @param data 
+     * Sorts the entire array using the Merge Sort algorithm. This implementation uses an Insertion Sort for sub-arrays
+     * of length 11 or less.
+     *
+     * @param data The array to be sorted.
      */
     @Override
     public void sort(final T[] data) {
