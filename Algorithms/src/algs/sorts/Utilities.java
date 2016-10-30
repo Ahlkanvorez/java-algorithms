@@ -5,11 +5,22 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * Implements a few utility methods which are commonly needed in implementing sorting algorithms, as well as a few
+ * convenience methods for performing benchmarking tests, such as testing on arrays of sizes on a exponential curve
+ * (as is done in the DoublingTest method).
  *
- * @author robertmitchell
+ * @author Robert Mitchell <robert.mitchell36@gmail.com>
  */
 public class Utilities {
-    public static void testSort(final Sort s, final int T, final int N, final int R) {
+    /**
+     * Performs repeated trials with the given data specifications of the provided sort.
+     * 
+     * @param s The sort to use for this test.
+     * @param T The number of trials to perform.
+     * @param N The length of the trial arrays to use for sorting.
+     * @param R The range of integers [-R / 2, R / 2] to select random values from for use in sorting.
+     */
+    public static void testSort(final Sort<Integer> s, final int T, final int N, final int R) {
         final List<Double> times = new LinkedList<>();
         for (int t = 0; t < T; ++t) {
             final Integer[] data = new Integer[N];
@@ -28,12 +39,18 @@ public class Utilities {
                 System.out.printf("Failed case: %s%n", Arrays.toString(data));
             }
         }
-        
+
+        // TODO: Figure out what the little red lambda sign means in IntelliJ.
         System.out.printf("%d trials length %8d: %.4f s%n", T, N,
                 times.stream().reduce((a, b) -> a + b).get() / times.size());
     }
     
-    public static void testSort(final Sort s) {
+    /**
+     * Performs 50 trials of the provided sort on integer arrays of length 10,000 with random values on [-10, 10].
+     * 
+     * @param s The sort to test.
+     */
+    public static void testSort(final Sort<Integer> s) {
         // T = trials, N = length of array, R = range of values.
         final int T = 50;
         final int N = 10000;
@@ -41,7 +58,14 @@ public class Utilities {
         testSort(s, T, N, R);
     }
     
-    public static void doublingTest(final Sort s, final int min, final int max) {
+    /**
+     * Performs 20 trials on arrays of length 2^min through 2^max of the given sort.
+     * 
+     * @param s The sort to test.
+     * @param min The smallest exponent to use for the length of the test array (viz. 2^min).
+     * @param max The largest exponent to use for the length of the test array (viz. 2^max).
+     */
+    public static void doublingTest(final Sort<Integer> s, final int min, final int max) {
         final int T = 20;
         final int R = 20;
         for (int N = min; N < max; N *= 2) {
@@ -49,29 +73,45 @@ public class Utilities {
         }
     }
     
+    /**
+     * Exchanges the elements at the two provided indices in the given array.
+     * 
+     * @param data The data in which to exchange elements.
+     * @param i The first element to exchange.
+     * @param j The second element to exchange.
+     */
     public static void swap(final Object[] data, final int i, final int j) {
-        if (data != null &&
-            i >= 0 && i < data.length &&
-            j >= 0 && j < data.length) {
-            final Object tmp = data[i];
-            data[i] = data[j];
-            data[j] = tmp;
-        }
+        /* Assume the indices are within the bounds of the array. */
+        final Object tmp = data[i];
+        data[i] = data[j];
+        data[j] = tmp;
     }
     
-    public static boolean isSorted(final Comparable[] data) {
+    /**
+     * Checks whether the provided array is sorted according to it's natural ordering, defined by .compareTo(T).
+     * 
+     * @param data The array to test whether it is sorted.
+     * @return True if the array is sorted in the order specified by the data's .compareTo(T), false otherwise.
+     */
+    public static <T extends Comparable<T>> boolean isSorted(final T[] data) {
         if (data == null || data.length == 1) {
             return false;
         }
         for (int i = 1; i < data.length; ++i) {
             if (data[i].compareTo(data[i - 1]) < 0) {
-                return false; // No element should be less than it's predecessor.
+                return false; /* No element should be less than it's predecessor. */
             }
         }
         return true;
     }
 
-    public static void shuffle(Object[] data) {
+    /**
+     * Shuffles the array using the Knuth-Shuffle (Fischer-Yates Shuffle).
+     * This shuffling algorithm runs in O(N) time.
+     * 
+     * @param data The array to shuffle.
+     */
+    public static void shuffle(final Object[] data) {
         for (int i = data.length - 1; i > 0; --i) {
             swap(data, i, (int) (Math.random() * i));
         }
