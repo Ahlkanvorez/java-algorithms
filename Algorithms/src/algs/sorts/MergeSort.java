@@ -110,6 +110,7 @@ public class MergeSort<T extends Comparable<T>> implements Sort<T> {
         sort(data, 0, data.length - 1);
     }
 
+    /** TODO: Implement JUnit tests for this class. */
     public static void main(final String[] args) {
         System.out.println("Testing Merge Sort:");
         Utilities.doublingTest(new MergeSort<Integer>(), (int) Math.pow(2, 13), (int) Math.pow(2, 25));

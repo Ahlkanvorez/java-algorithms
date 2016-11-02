@@ -55,7 +55,8 @@ public class SelectionSort<T extends Comparable<T>> implements Sort<T> {
     public void sort(final T[] data) {
         sort(data, 0, data.length);
     }
-    
+
+    /** TODO: Implement JUnit tests for this class. */
     public static void main(final String[] args) {
         System.out.println("Testing Selection Sort:");
         Utilities.doublingTest(new SelectionSort<Integer>(),
