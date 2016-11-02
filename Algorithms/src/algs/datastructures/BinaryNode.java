@@ -51,9 +51,7 @@ public class BinaryNode<T> {
 
     @Override
     public int hashCode() {
-        int hash = 11;
-        hash = 37 * hash + Objects.hashCode(this.value);
-        return hash;
+        return 11 * 37 + Objects.hashCode(this.value);
     }
 
     @Override
