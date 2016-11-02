@@ -19,6 +19,30 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
     private int size;
 
     /**
+     * Returns the BinaryNode object at the specified index, allowing other methods to not need to traverse the linked
+     * list's internal nodes.
+     *
+     * This operation is O(N), but will in general use closer to ~ N / 2 node traversals, since it traverses half the
+     * list starting from the closer node to the target node.
+     *
+     * @param index The index of the desired node.
+     * @return The BinaryNode object at the specified node.
+     */
+    private BinaryNode<T> getNode(final int index) {
+        /* Iterate through the list from the root if the index is closer to it, or from the tail if
+         * the index is closer to it, to the desired index.
+         */
+        BinaryNode<T> iterator = root;
+        if (index < size / 2) {
+            for (int i = 0; i < index; ++i, iterator = iterator.getRight());
+        } else {
+            iterator = tail;
+            for (int i = size; i > index + 1; --i, iterator = iterator.getLeft());
+        }
+        return iterator;
+    }
+
+    /**
      * Inserts a new node containing the given value at the end of the list. This also increases the size by 1.
      *
      * This operation is O(1), since the tail of the list is already recorded, only three references need to be changed.
@@ -72,25 +96,17 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
         } else if (index == size) {
             /* If the index is size, then just perform an add operation. */
             this.add(t);
+            return; /* Return so we don't accidentally increment the size twice. */
         } else {
-            /* Otherwise, iterate through the list from the root if the index is closer to it, or from the tail if
-             * the index is closer to it, to the desired index.
-             */
-            BinaryNode<T> iterator = root;
-            if (index < size / 2) {
-                for (int i = 0; i < index; ++i, iterator = iterator.getRight());
-            } else {
-                iterator = tail;
-                for (int i = size; i > index + 1; --i, iterator = iterator.getLeft());
-            }
+            BinaryNode<T> node = getNode(index);
             /* Then insert a new node containing the desired element in that position, by making the new node refer
              * right to the old node in that position, and left to the node immediately prior to that position, and
              * making the prior node refer right to the new node, and the original node in this position refer left to
              * the new node.
              */
-            final BinaryNode<T> tmp = iterator.getLeft();
-            iterator.setLeft(from(t, tmp, iterator));
-            tmp.setRight(iterator.getLeft());
+            final BinaryNode<T> tmp = node.getLeft();
+            node.setLeft(from(t, tmp, node));
+            tmp.setRight(node.getLeft());
         }
         ++size;
     }
@@ -114,26 +130,24 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException(index + " is out of bounds; the size of the list is: " + size);
         }
-        BinaryNode<T> iterator = root;
-        if (index < size / 2) {
-            for (int i = 0; i < index; ++i, iterator = iterator.getRight());
-        } else {
-            iterator = tail;
-            for (int i = size; i > index; --i, iterator = iterator.getLeft());
+        /* Iterate through the list from the root if the index is closer to it, or from the tail if
+         * the index is closer to it, to the desired index.
+         */
+        BinaryNode<T> node = getNode(index);
+        /* Repair the links for the remaining nodes, so that the removed node is not referenced. */
+        if (node.getLeft() != null) {
+            node.getLeft().setRight(node.getRight());
         }
-        if (iterator.getLeft() != null) {
-            iterator.getLeft().setRight(iterator.getRight());
+        if (node.getRight() != null) {
+            node.getRight().setLeft(node.getLeft());
         }
-        if (iterator.getRight() != null) {
-            iterator.getRight().setLeft(iterator.getLeft());
-        }
-        if (iterator == root) {
+        if (node == root) {
             root = root.getRight();
-        } else if (iterator == tail) {
+        } else if (node== tail) {
             tail = tail.getLeft();
         }
         size--;
-        return iterator.getValue();
+        return node.getValue();
     }
 
     /**
@@ -155,14 +169,7 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException(index + " is out of bounds; the size of the list is: " + size);
         }
-        BinaryNode<T> iterator = root;
-        if (index < size / 2) {
-            for (int i = 0; i < index; ++i, iterator = iterator.getRight());
-        } else {
-            iterator = tail;
-            for (int i = size; i > index + 1; --i, iterator = iterator.getLeft());
-        }
-        return iterator.getValue();
+        return getNode(index).getValue();
     }
 
     /**
@@ -184,14 +191,7 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException(index + " is out of bounds; the size of the list is: " + size);
         }
-        BinaryNode<T> iterator = root;
-        if (index < size / 2) {
-            for (int i = 0; i < index; ++i, iterator = iterator.getRight());
-        } else {
-            iterator = tail;
-            for (int i = size; i > index; --i, iterator = iterator.getLeft());
-        }
-        iterator.setValue(t);
+        getNode(index).setValue(t);
     }
 
     /**
@@ -224,8 +224,10 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
         }
         final DoublyLinkedList<T> o = (DoublyLinkedList<T>) other;
         if (this.size() != o.size()) {
+            System.out.println(this.size + " " + o.size());
             return false;
         }
+        /* Test corresponding nodes for equality. */
         for (BinaryNode<T> r1 = this.root, r2 = o.root; r1 != null; r1 = r1.getRight(), r2 = r2.getRight()) {
             if (!r1.equals(r2) || r1.getRight() != null && r2.getRight() == null ||
                     r1.getRight() == null && r2.getRight() != null) {
@@ -280,42 +282,43 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
             System.out.printf("index %d: %d%n", i, lst.get(i));
         }
 
+
         lst.insert(0, 25);
-        System.out.println(lst);
+        System.out.println(lst + " " + lst.size());
 
         lst.insert(lst.size(), 26);
-        System.out.println(lst);
+        System.out.println(lst + " " + lst.size());
 
         lst.insert(lst.size() / 2, 27);
-        System.out.println(lst);
+        System.out.println(lst + " " + lst.size());
 
         lst.set(0, 0);
-        System.out.println(lst);
+        System.out.println(lst + " " + lst.size());
 
-        lst.set(lst.size(), lst.size());
-        System.out.println(lst);
+        lst.set(lst.size() - 1, lst.size());
+        System.out.println(lst + " " + lst.size());
 
         lst.set(lst.size() / 2, lst.size() / 2);
-        System.out.println(lst);
+        System.out.println(lst + " " + lst.size());
 
         int tmp = lst.remove(0);
-        System.out.println(lst + " : " + tmp);
+        System.out.println(lst + " : " + tmp + " " + lst.size());
 
-        tmp = lst.remove(lst.size());
-        System.out.println(lst + " : " + tmp);
+        tmp = lst.remove(lst.size() - 1);
+        System.out.println(lst + " : " + tmp + " " + lst.size());
 
         tmp = lst.remove(lst.size() / 2);
-        System.out.println(lst + " : " + tmp);
+        System.out.println(lst + " : " + tmp + " " + lst.size());
 
         final LinkedList<Integer> other = new DoublyLinkedList<>();
         for (int i = 1; i < 6; ++i) {
             other.add(i);
         }
 
-        System.out.println(other.equals(lst));
-        System.out.println(other.equals(other));
+        System.out.printf("%s, %s : %b%n", other.toString(), lst.toString(), other.equals(lst));
+        System.out.printf("%s, %s : %b%n", other.toString(), other.toString(), other.equals(other));
 
-        other.set(3, 5);
-        System.out.println(other.equals(lst));
+        lst.set(2, 3);
+        System.out.printf("%s, %s : %b%n", other.toString(), lst.toString(), other.equals(lst));
     }
 }
