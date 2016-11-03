@@ -9,6 +9,8 @@ package algs.datastructures;
  * be O(1) unless the implementation is quite simple, and insert, get, remove, and set should be O(N); where N is the
  * size of the list, and we're counting the number of times we must transition from one node to another within the list.
  *
+ * TODO: Consider renaming to just List, since nothing in particular about these methods make it a Linked List.
+ *
  * Created by Robert Mitchell on 11/1/16.
  */
 public interface LinkedList<T> {

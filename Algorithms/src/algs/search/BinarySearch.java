@@ -21,9 +21,17 @@ public class BinarySearch {
     public static <T extends Comparable<T>> int find(final T target, final T[] data) {
         int low = 0;
         int high = data.length - 1;
+        /* Continue to halve the size of the search segment until either the target value is found, or there are no
+         * more indices to search.
+         */
         while (low <= high) {
+            // TODO: Compare with (high + low) >>> 1
             final int mid = low + (high - low) / 2;
             final int cmp = target.compareTo(data[mid]);
+            /* If the target element is less than the current element, re-search in the left half of the segment.
+             * Otherwise, if it is greater than the current element, re-search in the right half of the segment.
+             * If it is neither greater nor lesser, then it must be equal, so we return that index.
+             */
             if (cmp < 0) {
                 high = mid - 1;
             } else if (cmp > 0) {
@@ -32,6 +40,10 @@ public class BinarySearch {
                 return mid;
             }
         }
+        /* Returns a number which indicates what index the desired value would appear in if it were in the array,
+         * only one greater than that index, and made negative to indicate that it does not, in fact, exist in the
+         * array.
+         */
         return -(low + 1);
     }
 
