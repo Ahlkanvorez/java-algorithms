@@ -1,4 +1,4 @@
-package algs.algs.search;
+package algs.search;
 
 /**
  * Created by Robert Mitchell on 11/2/16.
