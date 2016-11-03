@@ -20,11 +20,11 @@ public class BinarySearch {
      */
     public static <T extends Comparable<T>> int find(final T target, final T[] data) {
         int low = 0;
-        int high = data.length;
-        while (low < high) {
+        int high = data.length - 1;
+        while (low <= high) {
             final int mid = low + (high - low) / 2;
             if (target.compareTo(data[mid]) < 0) {
-                high = mid;
+                high = mid - 1;
             } else if (target.compareTo(data[mid]) > 0) {
                 low = mid + 1;
             } else {
