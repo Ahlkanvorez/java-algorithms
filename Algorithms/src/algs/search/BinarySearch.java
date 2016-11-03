@@ -23,9 +23,10 @@ public class BinarySearch {
         int high = data.length - 1;
         while (low <= high) {
             final int mid = low + (high - low) / 2;
-            if (target.compareTo(data[mid]) < 0) {
+            final int cmp = target.compareTo(data[mid]);
+            if (cmp < 0) {
                 high = mid - 1;
-            } else if (target.compareTo(data[mid]) > 0) {
+            } else if (cmp > 0) {
                 low = mid + 1;
             } else {
                 return mid;
