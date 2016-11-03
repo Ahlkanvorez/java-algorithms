@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Created by Robert Mitchell on 11/1/16.
  */
-public class DoublyLinkedList<T> implements LinkedList<T> {
+public class DoublyLinkedList<T> implements LinkedList<T>, Queue<T>, Stack<T> {
 
     /** The first node in the list. */
     private BinaryNode<T> root;
@@ -190,6 +190,46 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
             throw new IndexOutOfBoundsException(index + " is out of bounds; the size of the list is: " + size);
         }
         getNode(index).setValue(t);
+    }
+
+    /**
+     * Adds the given item to the end of the queue, increasing the size by one.
+     * Note, this is equivalent to add(t).
+     *
+     * @param t The item to add to the end of the queue.
+     */
+    public void enqueue(final T t) {
+        this.add(t);
+    }
+
+    /**
+     * Removes the first (the front) item from the queue, and returns it, decreasing the size by one.
+     * Node, this is equivalent to remove(0).
+     *
+     * @return the first item in the queue.
+     */
+    public T dequeue() {
+        return this.remove(0);
+    }
+
+    /**
+     * Adds the given item to the top of the stack, increasing the size by one.
+     * Note, this is equivalent to add(t).
+     *
+     * @param t The item to add to the end of the stack.
+     */
+    public void push(final T t) {
+        this.add(t);
+    }
+
+    /**
+     * Removes the top item from the stack, and returns it, decreasing the size by one.
+     * Note, this is equivalent to remove(size() - 1).
+     *
+     * @return the top item in the stack.
+     */
+    public T pop() {
+        return this.remove(this.size() - 1);
     }
 
     /**
