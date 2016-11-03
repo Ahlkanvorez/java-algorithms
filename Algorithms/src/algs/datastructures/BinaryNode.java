@@ -17,14 +17,14 @@ public class BinaryNode<T> {
 
     /**
      * Creates a new node with the specified value, and left and right children or neighbors.
-     * Node that this cannot be called outside of this class, and is only invoked from within the static factory
-     * method, from.
+     * Note that, because this is protected, it can only be invoked by classes in the same package or who extend it.
+     * This is to encourage using the static factory methods instead.
      *
      * @param value The underlying value in the node.
      * @param left The left neighbor or child of this node.
      * @param right The right neighbor or child of this node.
      */
-    private BinaryNode(final T value, final BinaryNode<T> left, final BinaryNode<T> right) {
+    protected BinaryNode(final T value, final BinaryNode<T> left, final BinaryNode<T> right) {
         this.value = Objects.requireNonNull(value);
         this.left = left;
         this.right = right;
@@ -124,7 +124,7 @@ public class BinaryNode<T> {
     }
 
     /**
-     * A static factory for creating BinaryNode objects.
+     * A static factory for creating BinaryNode objects which have both links.
      *
      * @param value The underlying value of the node.
      * @param left The left child or neighbor of the node.
@@ -133,7 +133,41 @@ public class BinaryNode<T> {
      * @return A BinaryNode of the specified type with the given value and left, right neighbors/children.
      */
     public static <T> BinaryNode<T> from(final T value, final BinaryNode<T> left, final BinaryNode<T> right) {
-        // TODO: Consider caching nodes.
         return new BinaryNode<>(value, left, right);
+    }
+
+    /**
+     * A static factory for creating BinaryNode objects which have a null right link.
+     *
+     * @param value The underlying value of the node.
+     * @param left The left child or neighbor of the node.
+     * @param <T> The generic type this node instance should have.
+     * @return A BinaryNode of the specified type with the given value and left neighbor/child.
+     */
+    public static <T> BinaryNode<T> withLeft(final T value, final BinaryNode<T> left) {
+        return new BinaryNode<>(value, left, null);
+    }
+
+    /**
+     * A static factory for creating BinaryNode objects which have a null left link.
+     *
+     * @param value The underlying value of the node.
+     * @param right The right child or neighbor of the node.
+     * @param <T> The generic type this node instance should have.
+     * @return A BinaryNode of the specified type with the given value and right neighbor/child.
+     */
+    public static <T> BinaryNode<T> withRight(final T value, final BinaryNode<T> right) {
+        return new BinaryNode<>(value, null, right);
+    }
+
+    /**
+     * A static factory for creating BinaryNode objects which have null links for left and right neighbors.
+     *
+     * @param value The underlying value of the node.
+     * @param <T> The generic type this node instance should have.
+     * @return A BinaryNode with the specified underlying value.
+     */
+    public static <T> BinaryNode<T> valueOf(final T value) {
+        return new BinaryNode<>(value, null, null);
     }
 }

@@ -2,8 +2,6 @@ package algs.datastructures;
 
 import java.util.Objects;
 
-import static algs.datastructures.BinaryNode.from;
-
 /**
  * Created by Robert Mitchell on 11/1/16.
  */
@@ -55,12 +53,12 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
             /* If there is no tail, then there is no root, and the list is empty. So create a new node with the given
              * value, and make it both the root and the tail.
              */
-            root = tail = from(t, null, null);
+            root = tail = BinaryNode.valueOf(t);
         } else {
             /* Otherwise, there's already a tail, so make the tail point forward (right) to the new element, and make
              * the new element the new tail of the list.
              */
-            tail.setRight(from(t, tail, null));
+            tail.setRight(BinaryNode.withLeft(t, tail));
             tail = tail.getRight();
         }
         size++;
@@ -91,7 +89,7 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
              * root, and record the new node as the root.
              */
             BinaryNode<T> tmp = root;
-            root = from(t, null, tmp);
+            root = BinaryNode.withRight(t, tmp);
             tmp.setLeft(root);
         } else if (index == size) {
             /* If the index is size, then just perform an add operation. */
@@ -105,7 +103,7 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
              * the new node.
              */
             final BinaryNode<T> tmp = node.getLeft();
-            node.setLeft(from(t, tmp, node));
+            node.setLeft(BinaryNode.from(t, tmp, node));
             tmp.setRight(node.getLeft());
         }
         ++size;
