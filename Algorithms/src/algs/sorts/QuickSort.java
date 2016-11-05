@@ -113,7 +113,8 @@ public class QuickSort<T extends Comparable<T>> implements Sort<T> {
     public void sort(final T[] data, final int low, final int high) {
         quickSort(data, low, high);
     }
-    
+
+    /** TODO: Implement JUnit tests for this class. */
     public static void main (final String[] args) {
         System.out.println("Testing Quick Sort:");
         Utilities.doublingTest(new QuickSort<Integer>(), (int) pow(2, 13), (int) pow(2, 25));
