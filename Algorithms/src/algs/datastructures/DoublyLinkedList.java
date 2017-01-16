@@ -30,10 +30,13 @@ public class DoublyLinkedList<T> implements LinkedList<T>, Queue<T>, Stack<T> {
         /* Iterate through the list from the root if the index is closer to it, or from the tail if
          * the index is closer to it, to the desired index.
          */
+        if (index >= size || index < 0) {
+            throw new IndexOutOfBoundsException(index + " is out of bounds for the list of size " + size);
+        }
         BinaryNode<T> iterator = root;
         if (index < size / 2) {
             for (int i = 0; i < index; ++i, iterator = iterator.getRight());
-        } else {
+        } else if (index < size) {
             iterator = tail;
             for (int i = size; i > index + 1; --i, iterator = iterator.getLeft());
         }
@@ -49,19 +52,7 @@ public class DoublyLinkedList<T> implements LinkedList<T>, Queue<T>, Stack<T> {
      */
     @Override
     public void add(final T t) {
-        if (tail == null) {
-            /* If there is no tail, then there is no root, and the list is empty. So create a new node with the given
-             * value, and make it both the root and the tail.
-             */
-            root = tail = BinaryNode.valueOf(t);
-        } else {
-            /* Otherwise, there's already a tail, so make the tail point forward (right) to the new element, and make
-             * the new element the new tail of the list.
-             */
-            tail.setRight(BinaryNode.withLeft(t, tail));
-            tail = tail.getRight();
-        }
-        size++;
+        this.insert(size, t);
     }
 
     /**
@@ -88,19 +79,38 @@ public class DoublyLinkedList<T> implements LinkedList<T>, Queue<T>, Stack<T> {
             /* If we're inserting at the beginning, then make a new node whose right reference refer to the current
              * root, and record the new node as the root.
              */
-            BinaryNode<T> tmp = root;
-            root = BinaryNode.withRight(t, tmp);
-            tmp.setLeft(root);
+            root = BinaryNode.withRight(t, root);
+            // If the list was empty, there is no link to repair, so point the tail to the only node in the list.
+            if (root.getRight() == null) {
+                tail = root;
+            } else {
+                /* Otherwise, repair the link between the two nodes: tail should be pointing to the last node */
+                root.getRight().setLeft(root);
+            }
         } else if (index == size) {
-            /* If the index is size, then just perform an add operation. */
-            this.add(t);
-            return; /* Return so we don't accidentally increment the size twice. */
-        } else {
+            if (tail == null) {
+                /* If there is no tail, then there is no root, and the list is empty. So create a new node with the
+                   given value, and make it both the root and the tail. */
+                tail = BinaryNode.valueOf(t);
+                root = tail;
+            } else {
+                /* If the size is 1, then root == tail, so this makes the root point right to the new tail, which in
+                 * turn points back to the root.
+                 * Otherwise, if size > 1, the tail and root are already different, so this establishes the new tail
+                 * by having it point back to the previous tail, and having the previous tail point forward to it. The
+                 * root continues to point to the node to its right, maintaining the chain to the tail.
+                 */
+                tail.setRight(BinaryNode.withLeft(t, tail));
+                tail = tail.getRight();
+            }
+        } else { // if index > 0 && index < size
             BinaryNode<T> node = getNode(index);
             /* Then insert a new node containing the desired element in that position, by making the new node refer
              * right to the old node in that position, and left to the node immediately prior to that position, and
              * making the prior node refer right to the new node, and the original node in this position refer left to
-             * the new node.
+             * the new node. ... -- tmp       node -- ...
+             *                        \       /
+             *                     from(t, tmp, node)
              */
             final BinaryNode<T> tmp = node.getLeft();
             node.setLeft(BinaryNode.from(t, tmp, node));
@@ -139,12 +149,12 @@ public class DoublyLinkedList<T> implements LinkedList<T>, Queue<T>, Stack<T> {
         if (node.getRight() != null) {
             node.getRight().setLeft(node.getLeft());
         }
-        if (node == root) {
+        if (index == 0) {
             root = root.getRight();
-        } else if (node== tail) {
+        } else if (index == size - 1) {
             tail = tail.getLeft();
         }
-        size--;
+        --size;
         return node.getValue();
     }
 
@@ -204,7 +214,7 @@ public class DoublyLinkedList<T> implements LinkedList<T>, Queue<T>, Stack<T> {
 
     /**
      * Removes the first (the front) item from the queue, and returns it, decreasing the size by one.
-     * Node, this is equivalent to remove(0).
+     * Note, this is equivalent to remove(0).
      *
      * @return the first item in the queue.
      */
@@ -267,8 +277,8 @@ public class DoublyLinkedList<T> implements LinkedList<T>, Queue<T>, Stack<T> {
         }
         /* Test corresponding nodes for equality. */
         for (BinaryNode<T> r1 = this.root, r2 = o.root; r1 != null; r1 = r1.getRight(), r2 = r2.getRight()) {
-            if (!r1.equals(r2) || r1.getRight() != null && r2.getRight() == null ||
-                    r1.getRight() == null && r2.getRight() != null) {
+            if (!r1.equals(r2) || (r1.getRight() != null && r2.getRight() == null) ||
+                    (r1.getRight() == null && r2.getRight() != null)) {
                 return false;
             }
         }
@@ -299,8 +309,11 @@ public class DoublyLinkedList<T> implements LinkedList<T>, Queue<T>, Stack<T> {
      */
     @Override
     public String toString() {
+        if (root == null) {
+            return "{}";
+        }
         final StringBuilder str = new StringBuilder("{ ");
-        for (BinaryNode<T> iterator = root; iterator != tail; iterator = iterator.getRight()) {
+        for (BinaryNode<T> iterator = root; iterator.getRight() != null; iterator = iterator.getRight()) {
             str.append(iterator.toString()).append(", ");
         }
         return str.append(tail.toString()).append(" }").toString();
