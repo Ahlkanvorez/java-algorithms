@@ -36,10 +36,10 @@ public class BreadthFirstSearch {
             }
             visited.add(node);
             for (final Node child : children.apply(node)) {
-                if (visited.contains(child)) {
-                    continue; // Do not consider nodes we have already visited.
+                // Do not consider nodes we have already visited.
+                if (!visited.contains(child)) {
+                    toVisit.enqueue(child);
                 }
-                toVisit.enqueue(child);
             }
         }
 
