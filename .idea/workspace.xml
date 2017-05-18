@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52c7e94c-05ba-4c14-a6fc-5b9ec475b6bf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Algorithms/test/algs/search/BinarySearchTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms/Algorithms.iml" afterPath="$PROJECT_DIR$/Algorithms/Algorithms.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms/src/algs/search/BreadthFirstSearch.java" afterPath="$PROJECT_DIR$/Algorithms/src/algs/search/BreadthFirstSearch.java" />
     </list>
     <ignored path="java-algorithms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,6 +95,9 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <push-targets>
+      <push-target-info target-remote="origin" target-branch="master" repo="$PROJECT_DIR$" source="working" />
+    </push-targets>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -977,7 +977,7 @@
       <workItem from="1489711778910" duration="2784000" />
       <workItem from="1489714898515" duration="2568000" />
       <workItem from="1495065756354" duration="562000" />
-      <workItem from="1495131416070" duration="887000" />
+      <workItem from="1495131416070" duration="944000" />
     </task>
     <task id="LOCAL-00001" summary="Completed javadoc comments for Sort.java, InsertionSort.java, MergeSort.java, QuickSort.java, and Utilities.java&#10;All methods, classes, and interfaces are now completely commented.&#10;&#10;Also added files for the IntelliJ project.">
       <created>1477790005781</created>
@@ -1084,7 +1084,14 @@
       <option name="project" value="LOCAL" />
       <updated>1484607566048</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added tests for BinarySearch">
+      <created>1495132327724</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1495132327724</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1120,7 +1127,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48400000" />
+    <option name="totallyTimeSpent" value="48457000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1133,7 +1140,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1144,7 +1150,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901296" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33673468" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33673468" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1228,7 +1234,8 @@
     <MESSAGE value="Added a Pair class, which represents a 2-Tuple." />
     <MESSAGE value="Added an implementation of Breadth-First Search with comments" />
     <MESSAGE value="Corrected a major bug in the DoublyLinkedList implementation that resulted in a NullPointerException if used as a Queue." />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected a major bug in the DoublyLinkedList implementation that resulted in a NullPointerException if used as a Queue." />
+    <MESSAGE value="Added tests for BinarySearch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tests for BinarySearch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
