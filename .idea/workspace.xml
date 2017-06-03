@@ -6,16 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52c7e94c-05ba-4c14-a6fc-5b9ec475b6bf" name="Default" comment="Added tests for Insertion Sort,">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Algorithms/test/algs/sorts/MergeSortTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Algorithms/test/algs/sorts/SortTest.java" />
+    <list default="true" id="52c7e94c-05ba-4c14-a6fc-5b9ec475b6bf" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Algorithms/test/algs/sorts/SelectionSortTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms/src/algs/sorts/InsertionSort.java" afterPath="$PROJECT_DIR$/Algorithms/src/algs/sorts/InsertionSort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms/src/algs/sorts/MergeSort.java" afterPath="$PROJECT_DIR$/Algorithms/src/algs/sorts/MergeSort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms/src/algs/sorts/QuickSort.java" afterPath="$PROJECT_DIR$/Algorithms/src/algs/sorts/QuickSort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms/src/algs/sorts/SelectionSort.java" afterPath="$PROJECT_DIR$/Algorithms/src/algs/sorts/SelectionSort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms/src/algs/sorts/Utilities.java" afterPath="$PROJECT_DIR$/Algorithms/src/algs/sorts/Utilities.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms/test/algs/sorts/InsertionSortTest.java" afterPath="$PROJECT_DIR$/Algorithms/test/algs/sorts/InsertionSortTest.java" />
     </list>
     <ignored path="java-algorithms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,7 +40,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Utilities.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Utilities.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/Utilities.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-479">
@@ -87,11 +80,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SelectionSort.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SelectionSort.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/SelectionSort.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+                <state relative-caret-position="300">
+                  <caret line="20" column="70" lean-forward="true" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
                   <folding />
                 </state>
               </provider>
@@ -125,7 +118,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="MergeSortTest.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="MergeSortTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Algorithms/test/algs/sorts/MergeSortTest.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="210">
@@ -133,6 +126,16 @@
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SelectionSortTest.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Algorithms/test/algs/sorts/SelectionSortTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -211,8 +214,8 @@
         <option value="$PROJECT_DIR$/Algorithms/src/algs/sorts/QuickSort.java" />
         <option value="$PROJECT_DIR$/Algorithms/src/algs/sorts/MergeSort.java" />
         <option value="$PROJECT_DIR$/Algorithms/test/algs/sorts/QuickSortTest.java" />
-        <option value="$PROJECT_DIR$/Algorithms/test/algs/sorts/SelectionSortTest.java" />
         <option value="$PROJECT_DIR$/Algorithms/src/algs/sorts/SelectionSort.java" />
+        <option value="$PROJECT_DIR$/Algorithms/test/algs/sorts/SelectionSortTest.java" />
       </list>
     </option>
   </component>
@@ -1081,7 +1084,7 @@
       <workItem from="1495065756354" duration="562000" />
       <workItem from="1495131416070" duration="944000" />
       <workItem from="1495901947113" duration="358000" />
-      <workItem from="1496511410384" duration="2787000" />
+      <workItem from="1496511410384" duration="2844000" />
     </task>
     <task id="LOCAL-00001" summary="Completed javadoc comments for Sort.java, InsertionSort.java, MergeSort.java, QuickSort.java, and Utilities.java&#10;All methods, classes, and interfaces are now completely commented.&#10;&#10;Also added files for the IntelliJ project.">
       <created>1477790005781</created>
@@ -1202,13 +1205,17 @@
       <option name="project" value="LOCAL" />
       <updated>1496512630998</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added a generic SortTest class which can be extended for each of the&#10;testing classes for the other sorts.">
+      <created>1496514384219</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1496514384219</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="InsertionSortTest - 2017.06.03 at 13h 12m 51s.xml">
-      <configuration name="InsertionSortTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="InsertionSortTest - 2017.06.03 at 13h 15m 50s.xml">
       <configuration name="InsertionSortTest" configurationId="JUnit" />
     </history-entry>
@@ -1236,9 +1243,12 @@
     <history-entry file="SelectionSortTest - 2017.06.03 at 13h 25m 36s.xml">
       <configuration name="SelectionSortTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SelectionSortTest - 2017.06.03 at 13h 26m 59s.xml">
+      <configuration name="SelectionSortTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52351000" />
+    <option name="totallyTimeSpent" value="52408000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1262,7 +1272,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901296" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22142857" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22142857" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1348,7 +1358,8 @@
     <MESSAGE value="Corrected a major bug in the DoublyLinkedList implementation that resulted in a NullPointerException if used as a Queue." />
     <MESSAGE value="Added tests for BinarySearch" />
     <MESSAGE value="Added tests for Insertion Sort" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tests for Insertion Sort" />
+    <MESSAGE value="Added a generic SortTest class which can be extended for each of the&#10;testing classes for the other sorts." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a generic SortTest class which can be extended for each of the&#10;testing classes for the other sorts." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1649,22 +1660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/SelectionSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithms/test/algs/sorts/SelectionSortTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Algorithms/test/algs/sorts/MergeSortTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1672,6 +1667,22 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/SelectionSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="70" lean-forward="true" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithms/test/algs/sorts/SelectionSortTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
