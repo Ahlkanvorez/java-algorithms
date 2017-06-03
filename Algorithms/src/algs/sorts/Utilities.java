@@ -20,8 +20,9 @@ public class Utilities {
      * @param N The length of the trial arrays to use for sorting.
      * @param R The range of integers [-R / 2, R / 2] to select random values from for use in sorting.
      */
-    public static void testSort(final Sort<Integer> s, final int T, final int N, final int R) {
+    public static boolean testSort(final Sort<Integer> s, final int T, final int N, final int R) {
         final List<Double> times = new LinkedList<>();
+        boolean passed = true;
         for (int t = 0; t < T; ++t) {
             final Integer[] data = new Integer[N];
             for (int n = 0; n < data.length; ++n) {
@@ -37,12 +38,14 @@ public class Utilities {
             
             if (!isSorted(data)) {
                 System.out.printf("Failed case: %s%n", Arrays.toString(data));
+                passed = false;
             }
         }
 
         // TODO: Figure out what the little red lambda sign means in IntelliJ.
         System.out.printf("%d trials length %8d: %.4f s%n", T, N,
                 times.stream().reduce((a, b) -> a + b).get() / times.size());
+        return passed;
     }
     
     /**

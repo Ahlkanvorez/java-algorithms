@@ -17,22 +17,6 @@ package algs.sorts;
  * @author Robert Mitchell <robert.mitchell36@gmail.com>
  */
 public class InsertionSort<T extends Comparable<T>> implements Sort<T> {
-    /* TODO: Cache instances of InsertionSort for some common types
-    private static final Map<Class, InsertionSort> cache = new HashMap<>();
-
-    static {
-        cache.put(Integer.class, new InsertionSort<Integer>());
-        cache.put(Double.class, new InsertionSort<Double>());
-        cache.put(String.class, new InsertionSort<String>());
-    }
-
-    public static <T extends Comparable<T>> InsertionSort<T> create(Class<T> c) {
-        if (!cache.containsKey(c)) {
-            cache.put(c, new InsertionSort<T>());
-        }
-        return (InsertionSort<T>) cache.get(c);
-    } */
-
     /**
      * Sorts, using the Insertion Sort algorithm, the given array, data, on the inclusive interval [low, high].
      * Note, that this method assumes low < high.
