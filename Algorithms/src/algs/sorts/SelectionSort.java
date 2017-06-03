@@ -20,7 +20,6 @@ import static algs.sorts.Utilities.swap;
  */
 public class SelectionSort<T extends Comparable<T>> implements Sort<T> {
 
-
     /**
      * Sorts, using the Selection Sort algorithm, the given array, data, on the inclusive interval [low, high].
      * Note, that this method assumes low < high.
@@ -31,12 +30,15 @@ public class SelectionSort<T extends Comparable<T>> implements Sort<T> {
      */
     @Override
     public void sort(final T[] data, final int low, final int high) {
+        if (high - low <= 1) {
+            return;
+        }
         /* Loop through all of the data; all items in data before i are sorted,
             and after i are unsorted. */
-        for (int i = low; i < high; ++i) {
+        for (int i = low; i <= high; ++i) {
             int min = i; // The first unsorted item is at i.
             /* Search the remaining unsorted data */
-            for (int j = i; j < high; ++j) {
+            for (int j = i; j <= high; ++j) {
                 /* If we find a smaller item than that at min, update min. */
                 if (data[j].compareTo(data[min]) < 0) {
                     min = j;
@@ -53,7 +55,7 @@ public class SelectionSort<T extends Comparable<T>> implements Sort<T> {
      */
     @Override
     public void sort(final T[] data) {
-        sort(data, 0, data.length);
+        sort(data, 0, data.length - 1);
     }
 
     /** TODO: Implement JUnit tests for this class. */

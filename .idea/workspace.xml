@@ -6,11 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52c7e94c-05ba-4c14-a6fc-5b9ec475b6bf" name="Default" comment="Added tests for Insertion Sort">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Algorithms/test/algs/sorts/InsertionSortTest.java" />
+    <list default="true" id="52c7e94c-05ba-4c14-a6fc-5b9ec475b6bf" name="Default" comment="Added tests for Insertion Sort,">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Algorithms/test/algs/sorts/MergeSortTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Algorithms/test/algs/sorts/SortTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms/src/algs/sorts/InsertionSort.java" afterPath="$PROJECT_DIR$/Algorithms/src/algs/sorts/InsertionSort.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms/src/algs/sorts/MergeSort.java" afterPath="$PROJECT_DIR$/Algorithms/src/algs/sorts/MergeSort.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms/src/algs/sorts/QuickSort.java" afterPath="$PROJECT_DIR$/Algorithms/src/algs/sorts/QuickSort.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms/src/algs/sorts/SelectionSort.java" afterPath="$PROJECT_DIR$/Algorithms/src/algs/sorts/SelectionSort.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms/src/algs/sorts/Utilities.java" afterPath="$PROJECT_DIR$/Algorithms/src/algs/sorts/Utilities.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms/test/algs/sorts/InsertionSortTest.java" afterPath="$PROJECT_DIR$/Algorithms/test/algs/sorts/InsertionSortTest.java" />
     </list>
     <ignored path="java-algorithms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,21 +47,51 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="InsertionSort.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/InsertionSort.java">
+          <file leaf-file-name="Utilities.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/Utilities.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+                <state relative-caret-position="-479">
+                  <caret line="49" column="7" lean-forward="true" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Utilities.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/Utilities.java">
+          <file leaf-file-name="InsertionSort.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/InsertionSort.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="522">
-                  <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+                <state relative-caret-position="504">
+                  <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="QuickSort.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/QuickSort.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1473">
+                  <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MergeSort.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/MergeSort.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1620">
+                  <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SelectionSort.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/SelectionSort.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="204">
+                  <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -66,11 +101,35 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="InsertionSortTest.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="InsertionSortTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Algorithms/test/algs/sorts/InsertionSortTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="166">
-                  <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+                <state relative-caret-position="210">
+                  <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SortTest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Algorithms/test/algs/sorts/SortTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="624">
+                  <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MergeSortTest.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Algorithms/test/algs/sorts/MergeSortTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="210">
+                  <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -120,9 +179,6 @@
         <option value="$PROJECT_DIR$/Algorithms/src/algs/structures/SingleNode.java" />
         <option value="$PROJECT_DIR$/Algorithms/src/algs/structures/LinkedList.java" />
         <option value="$PROJECT_DIR$/Algorithms/src/algs/structures/SinglyLinkedList.java" />
-        <option value="$PROJECT_DIR$/Algorithms/src/algs/sorts/MergeSort.java" />
-        <option value="$PROJECT_DIR$/Algorithms/src/algs/sorts/QuickSort.java" />
-        <option value="$PROJECT_DIR$/Algorithms/src/algs/sorts/SelectionSort.java" />
         <option value="$PROJECT_DIR$/Algorithms/src/algs/algs/search/BinarySearch.java" />
         <option value="$PROJECT_DIR$/Algorithms/src/algs/datastructures/Stack.java" />
         <option value="$PROJECT_DIR$/Algorithms/src/algs/search/BinarySearch.java" />
@@ -146,10 +202,17 @@
         <option value="$PROJECT_DIR$/Algorithms/test/algs/numbertheory/RSAEncryptorTest.java" />
         <option value="$PROJECT_DIR$/Algorithms/src/algs/numbertheory/RSAEncryptor.java" />
         <option value="$PROJECT_DIR$/Algorithms/test/algs/search/BreadthFirstSearchTest.java" />
-        <option value="$PROJECT_DIR$/Algorithms/src/algs/sorts/InsertionSort.java" />
-        <option value="$PROJECT_DIR$/Algorithms/src/algs/sorts/Utilities.java" />
-        <option value="$PROJECT_DIR$/Algorithms/test/algs/sorts/InsertionSortTest.java" />
         <option value="$PROJECT_DIR$/Algorithms/test/algs/search/BinarySearchTest.java" />
+        <option value="$PROJECT_DIR$/Algorithms/src/algs/sorts/Utilities.java" />
+        <option value="$PROJECT_DIR$/Algorithms/test/algs/sorts/SortTest.java" />
+        <option value="$PROJECT_DIR$/Algorithms/test/algs/sorts/MergeSortTest.java" />
+        <option value="$PROJECT_DIR$/Algorithms/test/algs/sorts/InsertionSortTest.java" />
+        <option value="$PROJECT_DIR$/Algorithms/src/algs/sorts/InsertionSort.java" />
+        <option value="$PROJECT_DIR$/Algorithms/src/algs/sorts/QuickSort.java" />
+        <option value="$PROJECT_DIR$/Algorithms/src/algs/sorts/MergeSort.java" />
+        <option value="$PROJECT_DIR$/Algorithms/test/algs/sorts/QuickSortTest.java" />
+        <option value="$PROJECT_DIR$/Algorithms/test/algs/sorts/SelectionSortTest.java" />
+        <option value="$PROJECT_DIR$/Algorithms/src/algs/sorts/SelectionSort.java" />
       </list>
     </option>
   </component>
@@ -207,6 +270,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="algs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sorts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -328,6 +395,7 @@
       <recent name="algs.numbertheory" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
+      <recent name="algs.sorts.SortTest" />
       <recent name="" />
     </key>
   </component>
@@ -343,85 +411,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.InsertionSortTest">
-    <configuration default="false" name="BinarySearchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="algs.search.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Algorithms" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="algs.search" />
-      <option name="MAIN_CLASS_NAME" value="algs.search.BinarySearchTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="BinarySearchTest.oddLengthNumbersLastElementFind" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="algs.search.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Algorithms" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="algs.search" />
-      <option name="MAIN_CLASS_NAME" value="algs.search.BinarySearchTest" />
-      <option name="METHOD_NAME" value="oddLengthNumbersLastElementFind" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="BinarySearchTest.oddLengthNumbersMiddleElementFind" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="algs.search.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Algorithms" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="algs.search" />
-      <option name="MAIN_CLASS_NAME" value="algs.search.BinarySearchTest" />
-      <option name="METHOD_NAME" value="oddLengthNumbersMiddleElementFind" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.SelectionSortTest">
     <configuration default="false" name="InsertionSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -448,7 +438,33 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="InsertionSortTest.sortEmptyDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="MergeSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="algs.sorts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Algorithms" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="algs.sorts" />
+      <option name="MAIN_CLASS_NAME" value="algs.sorts.MergeSortTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="InsertionSortTest.sortEmptyIntervalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="algs.sorts.*" />
@@ -460,8 +476,60 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="algs.sorts" />
       <option name="MAIN_CLASS_NAME" value="algs.sorts.InsertionSortTest" />
-      <option name="METHOD_NAME" value="sortEmptyDataTest" />
+      <option name="METHOD_NAME" value="sortEmptyIntervalTest" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="QuickSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="algs.sorts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Algorithms" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="algs.sorts" />
+      <option name="MAIN_CLASS_NAME" value="algs.sorts.QuickSortTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="SelectionSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="algs.sorts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Algorithms" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="algs.sorts" />
+      <option name="MAIN_CLASS_NAME" value="algs.sorts.SelectionSortTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -936,19 +1004,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.BinarySearchTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.BinarySearchTest.oddLengthNumbersLastElementFind" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.BinarySearchTest.oddLengthNumbersMiddleElementFind" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.InsertionSortTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.InsertionSortTest.sortEmptyDataTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.InsertionSortTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MergeSortTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.InsertionSortTest.sortEmptyIntervalTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.QuickSortTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SelectionSortTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.InsertionSortTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.InsertionSortTest.sortEmptyDataTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.BinarySearchTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.BinarySearchTest.oddLengthNumbersMiddleElementFind" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.BinarySearchTest.oddLengthNumbersLastElementFind" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SelectionSortTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.QuickSortTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.MergeSortTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.InsertionSortTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.InsertionSortTest.sortEmptyIntervalTest" />
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -1013,7 +1081,7 @@
       <workItem from="1495065756354" duration="562000" />
       <workItem from="1495131416070" duration="944000" />
       <workItem from="1495901947113" duration="358000" />
-      <workItem from="1496511410384" duration="1211000" />
+      <workItem from="1496511410384" duration="2787000" />
     </task>
     <task id="LOCAL-00001" summary="Completed javadoc comments for Sort.java, InsertionSort.java, MergeSort.java, QuickSort.java, and Utilities.java&#10;All methods, classes, and interfaces are now completely commented.&#10;&#10;Also added files for the IntelliJ project.">
       <created>1477790005781</created>
@@ -1127,43 +1195,50 @@
       <option name="project" value="LOCAL" />
       <updated>1495132327724</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added tests for Insertion Sort">
+      <created>1496512630998</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1496512630998</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BinarySearchTest - 2017.05.23 at 12h 42m 43s.xml">
-      <configuration name="BinarySearchTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BinarySearchTest_evenLengthNumbersLastElementFind - 2017.05.18 at 13h 27m 05s.xml">
-      <configuration name="BinarySearchTest.evenLengthNumbersLastElementFind" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BinarySearchTest_oddLengthNumbersLastElementFind - 2017.05.18 at 13h 27m 09s.xml">
-      <configuration name="BinarySearchTest.oddLengthNumbersLastElementFind" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BinarySearchTest_oddLengthNumbersMiddleElementFind - 2017.05.18 at 13h 28m 45s.xml">
-      <configuration name="BinarySearchTest.oddLengthNumbersMiddleElementFind" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="InsertionSortTest - 2017.06.03 at 12h 52m 09s.xml">
+    <history-entry file="InsertionSortTest - 2017.06.03 at 13h 12m 51s.xml">
       <configuration name="InsertionSortTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InsertionSortTest - 2017.06.03 at 12h 54m 13s.xml">
+    <history-entry file="InsertionSortTest - 2017.06.03 at 13h 15m 50s.xml">
       <configuration name="InsertionSortTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InsertionSortTest - 2017.06.03 at 12h 55m 51s.xml">
+    <history-entry file="InsertionSortTest - 2017.06.03 at 13h 21m 52s.xml">
       <configuration name="InsertionSortTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InsertionSortTest_sortEmptyDataTest - 2017.06.03 at 12h 54m 30s.xml">
-      <configuration name="InsertionSortTest.sortEmptyDataTest" configurationId="JUnit" />
+    <history-entry file="MergeSortTest - 2017.06.03 at 13h 15m 39s.xml">
+      <configuration name="MergeSortTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RSAEncryptionFactoryTest_randomPrimeOrder - 2017.03.16 at 20h 54m 38s.xml">
-      <configuration name="RSAEncryptionFactoryTest.randomPrimeOrder" configurationId="JUnit" />
+    <history-entry file="MergeSortTest - 2017.06.03 at 13h 21m 57s.xml">
+      <configuration name="MergeSortTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RSAEncryptionFactoryTest_randomPrimeOrder - 2017.03.16 at 21h 06m 29s.xml">
-      <configuration name="RSAEncryptionFactoryTest.randomPrimeOrder" configurationId="JUnit" />
+    <history-entry file="QuickSortTest - 2017.06.03 at 13h 23m 28s.xml">
+      <configuration name="QuickSortTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SelectionSortTest - 2017.06.03 at 13h 24m 24s.xml">
+      <configuration name="SelectionSortTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SelectionSortTest - 2017.06.03 at 13h 25m 02s.xml">
+      <configuration name="SelectionSortTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SelectionSortTest - 2017.06.03 at 13h 25m 18s.xml">
+      <configuration name="SelectionSortTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SelectionSortTest - 2017.06.03 at 13h 25m 36s.xml">
+      <configuration name="SelectionSortTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50775000" />
+    <option name="totallyTimeSpent" value="52351000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1187,7 +1262,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901296" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22142857" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22142857" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1272,11 +1347,12 @@
     <MESSAGE value="Added an implementation of Breadth-First Search with comments" />
     <MESSAGE value="Corrected a major bug in the DoublyLinkedList implementation that resulted in a NullPointerException if used as a Queue." />
     <MESSAGE value="Added tests for BinarySearch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tests for BinarySearch" />
+    <MESSAGE value="Added tests for Insertion Sort" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tests for Insertion Sort" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1285,34 +1361,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/datastructures/BinaryNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/InsertionSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/QuickSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/Sort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/SelectionSort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1387,27 +1435,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/SelectionSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/QuickSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="786">
-          <caret line="116" column="54" lean-forward="false" selection-start-line="116" selection-start-column="54" selection-end-line="116" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/MergeSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="786">
-          <caret line="112" column="54" lean-forward="false" selection-start-line="112" selection-start-column="54" selection-end-line="112" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -1554,22 +1581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/Utilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/InsertionSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Algorithms/test/algs/search/BinarySearchTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -1578,10 +1589,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/Utilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-479">
+          <caret line="49" column="7" lean-forward="true" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithms/test/algs/sorts/SortTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Algorithms/test/algs/sorts/InsertionSortTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/InsertionSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/MergeSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/QuickSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1473">
+          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithms/test/algs/sorts/QuickSortTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithms/src/algs/sorts/SelectionSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithms/test/algs/sorts/SelectionSortTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithms/test/algs/sorts/MergeSortTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

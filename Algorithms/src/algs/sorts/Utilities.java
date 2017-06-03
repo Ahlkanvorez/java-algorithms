@@ -42,7 +42,6 @@ public class Utilities {
             }
         }
 
-        // TODO: Figure out what the little red lambda sign means in IntelliJ.
         System.out.printf("%d trials length %8d: %.4f s%n", T, N,
                 times.stream().reduce((a, b) -> a + b).get() / times.size());
         return passed;
@@ -97,10 +96,26 @@ public class Utilities {
      * @return True if the array is sorted in the order specified by the data's .compareTo(T), false otherwise.
      */
     public static <T extends Comparable<T>> boolean isSorted(final T[] data) {
-        if (data == null || data.length == 1) {
+        return isSorted(data, 0, data.length - 1);
+    }
+
+    /**
+     * Checks whether the provided array is sorted according to it's natural ordering, defined by .compareTo(T), on the
+     * given interval.
+     *
+     * @param data The array to test whether it is sorted.
+     * @param low The least index in the interval to check.
+     * @param high The greatest index in the interval to check.
+     * @return True if the array is sorted in the order specified by the data's .compareTo(T), false otherwise.
+     */
+    public static <T extends Comparable<T>> boolean isSorted(final T[] data, final int low, final int high) {
+        if (data == null || data.length == 0) {
             return false;
         }
-        for (int i = 1; i < data.length; ++i) {
+        if (data.length == 1 || high - low <= 1) {
+            return true;
+        }
+        for (int i = low + 1; i <= high; ++i) {
             if (data[i].compareTo(data[i - 1]) < 0) {
                 return false; /* No element should be less than it's predecessor. */
             }

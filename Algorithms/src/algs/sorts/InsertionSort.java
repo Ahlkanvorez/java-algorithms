@@ -51,7 +51,6 @@ public class InsertionSort<T extends Comparable<T>> implements Sort<T> {
         sort(data, 0, data.length - 1);
     }
 
-    /** TODO: Implement JUnit tests for this class. */
     public static void main(final String[] args) {
         System.out.println("Testing Insertion Sort:");
         Utilities.doublingTest(new InsertionSort<Integer>(),

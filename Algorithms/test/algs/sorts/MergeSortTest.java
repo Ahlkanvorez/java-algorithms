@@ -7,9 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Created by robertmitchell on 6/3/17.
  */
-class InsertionSortTest extends SortTest {
-    InsertionSortTest() {
+class MergeSortTest extends SortTest {
+    MergeSortTest() {
         super();
-        super.sort = new InsertionSort<>();
+        super.sort = new MergeSort<>();
     }
 }
