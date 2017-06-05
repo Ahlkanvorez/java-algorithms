@@ -64,6 +64,7 @@ class QueueTest {
     void testDequeueFromNonemptyQueue() {
         queue = Queue.newInstance();
         queue.enqueue(0);
+        queue.enqueue(1);
         boolean erred = false;
         Integer val = null;
         try {

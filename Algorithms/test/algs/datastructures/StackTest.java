@@ -64,6 +64,7 @@ class StackTest {
     void testPopFromNonemptyStack() {
         stack = Stack.newInstance();
         stack.push(0);
+        stack.push(1);
         boolean erred = false;
         Integer val = null;
         try {
@@ -73,7 +74,7 @@ class StackTest {
         } finally {
             assertFalse(erred);
             assertNotNull(val);
-            assert val == 0;
+            assert val == 1;
         }
     }
 
