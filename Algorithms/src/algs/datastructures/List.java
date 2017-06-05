@@ -1,7 +1,7 @@
 package algs.datastructures;
 
 /**
- * Defines the ADT of a Linked List, specifying that a Linked List must have the functionality to add or remove an item,
+ * Defines the ADT of a List, specifying that a List must have the functionality to add or remove an item,
  * to set or get the value at a specified index, and to insert an item into the list at a given index, as well as
  * retrieve the size of the list.
  *
@@ -9,11 +9,9 @@ package algs.datastructures;
  * be O(1) unless the implementation is quite simple, and insert, get, remove, and set should be O(N); where N is the
  * size of the list, and we're counting the number of times we must transition from one node to another within the list.
  *
- * TODO: Consider renaming to just List, since nothing in particular about these methods make it a Linked List.
- *
  * Created by Robert Mitchell on 11/1/16.
  */
-public interface LinkedList<T> {
+public interface List<T> {
 
     /**
      * Inserts a new node containing the given value at the end of the list. This also increases the size by 1.

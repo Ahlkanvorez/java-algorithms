@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Created by Robert Mitchell on 11/1/16.
  */
-public class DoublyLinkedList<T> implements LinkedList<T>, Queue<T>, Stack<T> {
+public class DoublyLinkedList<T> implements List<T>, Queue<T>, Stack<T> {
 
     /** The first node in the list. */
     private BinaryNode<T> root;
@@ -255,12 +255,12 @@ public class DoublyLinkedList<T> implements LinkedList<T>, Queue<T>, Stack<T> {
     }
 
     /**
-     * Checks whether this DoublyLinkedList is equal to the specified object.
+     * Checks whether this DoublyList is equal to the specified object.
      *
-     * Two DoublyLinkedLists are equal iff they are the same size, and contain the same values in the same order.
+     * Two DoublyLists are equal iff they are the same size, and contain the same values in the same order.
      *
      * @param other The object with which to test for equality.
-     * @return True if the other object is equal to this DoublyLinkedList, false otherwise.
+     * @return True if the other object is equal to this DoublyList, false otherwise.
      */
     @Override
     public boolean equals(final Object other) {
@@ -322,7 +322,7 @@ public class DoublyLinkedList<T> implements LinkedList<T>, Queue<T>, Stack<T> {
     /** TODO: Implement JUnit tests for this class. */
     public static void main(final String[] args) {
         final Integer[] data = {1, 2, 3, 4, 5};
-        final LinkedList<Integer> lst = new DoublyLinkedList<>();
+        final List<Integer> lst = new DoublyLinkedList<>();
 
         for (final Integer i : data) {
             lst.add(i);
@@ -361,7 +361,7 @@ public class DoublyLinkedList<T> implements LinkedList<T>, Queue<T>, Stack<T> {
         tmp = lst.remove(lst.size() / 2);
         System.out.println(lst + " : " + tmp + " " + lst.size());
 
-        final LinkedList<Integer> other = new DoublyLinkedList<>();
+        final List<Integer> other = new DoublyLinkedList<>();
         for (int i = 1; i < 6; ++i) {
             other.add(i);
         }
