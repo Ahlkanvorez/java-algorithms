@@ -8,66 +8,66 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Created by robertmitchell on 6/5/17.
  */
-class StackTest {
-    static Stack<Integer> stack;
+class QueueTest {
+    static Queue<Integer> queue;
 
     @BeforeAll
     static void init() {
-        stack = Stack.newInstance();
+        queue = Queue.newInstance();
     }
 
     @Test
     void testNewInstanceNotNull() {
-        assertNotNull(stack);
+        assertNotNull(queue);
     }
 
     @Test
     void testNewInstanceEmptySize() {
-        assertEquals(0, stack.size());
+        assertEquals(0, queue.size());
     }
 
     @Test
     void testNewInstanceIsDoublyLinkedList() {
-        assertTrue(stack instanceof DoublyLinkedList);
+        assertTrue(queue instanceof DoublyLinkedList);
     }
 
     @Test
-    void testPushOntoEmptyStack() {
+    void testEnqueueOntoEmptyQueue() {
         boolean erred = false;
         try {
-            stack.push(5);
+            queue.enqueue(5);
         } catch (final Exception e) {
             erred = true;
         } finally {
             assertFalse(erred);
-            assert stack.size() == 1;
+            assert queue.size() == 1;
         }
     }
 
     @Test
-    void testPushOntoNonEmptyStack() {
-        if (stack.size() == 0) {
-            stack.push(0);
+    void testEnqueueOntoNonEmptyQueue() {
+        if (queue.size() == 0) {
+            queue.enqueue(0);
         }
         boolean erred = false;
         try {
-            stack.push(1);
+            queue.enqueue(1);
         } catch (final Exception e) {
             erred = true;
         } finally {
             assertFalse(erred);
-            assert stack.size() == 2;
+            assert queue.size() == 2;
         }
     }
 
     @Test
-    void testPopFromNonemptyStack() {
-        stack = Stack.newInstance();
-        stack.push(0);
+    void testDequeueFromNonemptyQueue() {
+        queue = Queue.newInstance();
+        queue.enqueue(0);
         boolean erred = false;
         Integer val = null;
         try {
-            val = stack.pop();
+            val = queue.dequeue();
         } catch (final Exception e) {
             erred = true;
         } finally {
@@ -78,12 +78,12 @@ class StackTest {
     }
 
     @Test
-    void testPopFromEmptyStack() {
-        stack = Stack.newInstance();
+    void testDequeueFromEmptyQueue() {
+        queue = Queue.newInstance();
         boolean erred = false;
         Integer val = null;
         try {
-            val = stack.pop();
+            val = queue.dequeue();
         } catch (Exception e) {
             erred = true;
             assertTrue(e instanceof IndexOutOfBoundsException);
@@ -94,25 +94,25 @@ class StackTest {
     }
 
     @Test
-    void testSizeOfEmptyStack() {
-        stack = Stack.newInstance();
-        assertEquals(0, stack.size());
+    void testSizeOfEmptyQueue() {
+        queue = Queue.newInstance();
+        assertEquals(0, queue.size());
     }
 
     @Test
-    void testSizeOfNonEmptyStack() {
-        stack = Stack.newInstance();
-        stack.push(0);
-        stack.push(1);
-        assertEquals(2, stack.size());
+    void testSizeOfNonEmptyQueue() {
+        queue = Queue.newInstance();
+        queue.enqueue(0);
+        queue.enqueue(1);
+        assertEquals(2, queue.size());
     }
 
     @Test
-    void testSizeOfStackAfterPop() {
-        stack = Stack.newInstance();
-        stack.push(0);
-        stack.push(1);
-        stack.pop();
-        assertEquals(1, stack.size());
+    void testSizeOfQueueAfterDequeue() {
+        queue = Queue.newInstance();
+        queue.enqueue(0);
+        queue.enqueue(1);
+        queue.dequeue();
+        assertEquals(1, queue.size());
     }
 }
