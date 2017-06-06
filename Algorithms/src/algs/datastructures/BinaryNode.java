@@ -89,6 +89,8 @@ public class BinaryNode<T> {
      * Two nodes are equal iff they have the same underlying value. Their left and right nodes are not taken into
      * consideration.
      *
+     * TODO: Check whether this forms an equivalence relation or not (symmetry, reflexivity, & transitivity)
+     *
      * @param other The other object to test against for equality.
      * @return True if the other node has an equal underlying value to that of this one, false otherwise.
      */
