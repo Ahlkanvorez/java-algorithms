@@ -58,7 +58,7 @@ public class DoublyLinkedList<T> implements List<T>, Queue<T>, Stack<T> {
     /**
      * Inserts a new node containing the given value into the specified position, and shifts the existing value ahead
      * one index in the list. Note that nodes are zero-indexed, so inserting at index 0 will create a new first element
-     * (a new root element), and inserting at index size() - 1 will create a new last element (the tail element). This
+     * (a new root element), and inserting at index size() will create a new last element (the tail element). This
      * also increases the size by 1.
      *
      * If index is closer to the root than the tail, then the iteration to the index of insertion will begin from the
@@ -272,7 +272,6 @@ public class DoublyLinkedList<T> implements List<T>, Queue<T>, Stack<T> {
         }
         final DoublyLinkedList<T> o = (DoublyLinkedList<T>) other;
         if (this.size() != o.size()) {
-            System.out.println(this.size + " " + o.size());
             return false;
         }
         /* Test corresponding nodes for equality. */
