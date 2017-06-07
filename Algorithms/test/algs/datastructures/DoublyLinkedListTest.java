@@ -60,7 +60,7 @@ class DoublyLinkedListTest {
 
     @Test
     void testSetInBounds() {
-        final List<String> lst = new DoublyLinkedList();
+        final List<String> lst = new DoublyLinkedList<>();
         lst.add("x");
         lst.add("y");
         lst.set(1, "a");
@@ -87,7 +87,7 @@ class DoublyLinkedListTest {
 
     @Test
     void testRemoveInBounds() {
-        final List<String> lst = new DoublyLinkedList();
+        final List<String> lst = new DoublyLinkedList<>();
         lst.add("x");
         lst.add("y");
         assertEquals("y", lst.remove(1));
