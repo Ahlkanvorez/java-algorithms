@@ -36,14 +36,15 @@ public class BreadthFirstSearch {
             }
             visited.add(node);
             for (final Node child : children.apply(node)) {
-                // Do not consider nodes we have already visited.
+                /* Do not consider nodes we have already visited. */
                 if (!visited.contains(child)) {
                     toVisit.enqueue(child);
                 }
             }
         }
 
-        // If the children function eventually stops producing new values, and the target is never found, return null.
+        /* If there are no more children to search before the target is found, null indicates it does not exist in
+            the graph */
         return null;
     }
 }
