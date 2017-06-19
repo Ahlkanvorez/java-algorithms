@@ -25,7 +25,6 @@ public class BinarySearch {
          * more indices to search.
          */
         while (low <= high) {
-            // TODO: Compare with (high + low) >>> 1
             final int mid = low + (high - low) / 2;
             final int cmp = target.compareTo(data[mid]);
             /* If the target element is less than the current element, re-search in the left half of the segment.
